@@ -1,0 +1,25 @@
+.marcoiz{
+
+  border-top: #99cccc 2px solid;
+  border-left: #99cccc 2px solid;
+  border-right: #99cccc 2px solid;
+}
+.marcome{
+border-top: #99cccc 2px solid;
+
+}
+.marcode{
+
+  border-top: #99cccc 2px solid;
+  border-left: #99cccc 2px solid;
+  border-right: #99cccc 2px solid;
+}
+.error  {
+    border-color:red;
+}
+.valid {
+    border-color:green;
+}
+textarea {
+        resize: none;
+}

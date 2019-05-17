@@ -1,0 +1,106 @@
+/* bootstrap 3 helpers */
+
+.navbar-form input, .form-inline input {
+	width:auto;
+}
+
+body{
+	flex-direction: column;
+}
+header {
+	height:100px;
+}
+
+#nav.affix {
+    position: fixed;
+    top: 0;
+    width: 95%;
+    z-index:10;
+}
+
+#sidebar.affix-top {
+    position: static;
+}
+
+#sidebar.affix {
+    position: fixed;
+    top: 80px;
+}
+.colorheader
+{
+	background-color: rgb(255,255,204);
+	margin-left: 2.5%;
+	width: 95%;
+
+	padding-top:1em;
+	
+	padding-bottom: 1em;
+	box-shadow: 0 0 .5em rgba(171,171,171,1);
+}
+#nav
+{
+	background-color: rgb(224,224,224);
+	margin-left: 2.5%;
+	width: 95%;
+	
+	padding-top:0.5em;
+	
+	padding-bottom: 0.5em;
+	box-shadow: 0 0 .5em rgba(171,171,171,1);
+}
+
+.footer {
+   
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+}
+#seccion
+{
+	height: 100em;
+}
+
+.wrapper {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -4em;
+}
+
+.colorfooter
+{
+	background-color: rgb(224,224,224);
+	margin-left: 2.5%;
+	width: 95%;
+
+	padding-top:1em;
+	
+	padding-bottom: 1em;
+	box-shadow: 0 0 .5em rgba(171,171,171,1);
+}
+
+#logo1
+{		
+
+	width: 100%;
+}
+#logo2
+{
+	width: 100%;
+	
+	border-right:  1px black solid;
+}
+#logo3
+{
+	width: 70%;
+}
+#container{
+	flex: 1 0 auto;
+}
+
+.v-align{
+	position: relative;
+	margin-top: 50%;
+}
+
