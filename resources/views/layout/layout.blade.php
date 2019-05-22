@@ -51,24 +51,16 @@
 
         <nav>
             <ul class="nav navbar-nav">
-                <li class="dropdown">
-                    <a class="navbar-nav" data-toggle="dropdown-submenu">Agregar Datos
-                        <span class="caret"></span></a>
-                    <ul class="dropdown-submenu">
-                        <li><a href="destinos">Destinos</a></li>
-                        <li><a href="estados">Estados</a></li>
-                        <li><a href="marcas">Marcas</a></li>
-                        <li><a href="municipios">Municipios</a></li>
-                        <li><a href="origenes">Origenes</a></li>
-                        <li><a href="profesiones">Cargos</a></li>
-                        <li><a href="vehiculos">Vehiculos</a></li>
-                        <li><a href="personales">Personal</a></li>
-                    </ul>
-                </li>
+                <li><a href="{{url("destinos")}}">Destinos</a></li>
+                <li><a href="estados">Estados</a></li>
+                <li><a href="marcas">Marcas</a></li>
+                <li><a href="municipios">Municipios</a></li>
+                <li><a href="origenes">Origenes</a></li>
+                <li><a href="profesiones">Cargos</a></li>
+                <li><a href="vehiculos">Vehiculos</a></li>
+                <li><a href="personales">Personal</a></li>
                 <li class="nav-item"><a href="{{url("plantillas")}}" class="nav-link text-white">Plantilla</a></li>
                 <li class="nav-item"><a href="{{url("oficios")}}" class="nav-link text-white">Generar Oficios</a></li>
-                <li class="nav-item"><a href="" class="nav-link text-white">Historial Oficios</a></li>
-                <li class="nav-item"><a href="" class="nav-link text-white">Salir</a></li>
             </ul>
         </nav>
     </div>

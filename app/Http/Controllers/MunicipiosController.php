@@ -37,7 +37,6 @@ class MunicipiosController extends Controller
     public function create()
     {
         //
-
         $estados = Estados::all();
         return view("municipios.create",compact("estados"));
 
@@ -74,9 +73,11 @@ class MunicipiosController extends Controller
      * @param  \App\Municipios  $municipios
      * @return \Illuminate\Http\Response
      */
-    public function edit(Municipios $municipios)
+    public function edit(Municipios $municipio)
     {
         //
+        $estados = Estados::all();
+        return view("municipios.edit",compact('municipio','estados'));
     }
 
     /**
@@ -86,9 +87,11 @@ class MunicipiosController extends Controller
      * @param  \App\Municipios  $municipios
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Municipios $municipios)
+    public function update(Request $request, Municipios $municipio)
     {
         //
+        $municipio->update($request->all());
+        return redirect("municipios");
     }
 
     /**

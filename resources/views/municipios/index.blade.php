@@ -25,7 +25,7 @@
                             <td>{{$municipio->id_municipio}}</td>
                             <td>{{$municipio->descripcion}}</td>
                             <td>{{isset($municipio->getEstado[0])?$municipio->getEstado[0]->descripcion:""}}</td>
-                            <td><a href="" class="btn btn-outline-primary"><i class="far fa-edit"></i></a></td>
+                            <td><a href="{{route("municipios.edit",$municipio->id_municipio)}}" class="btn btn-outline-primary"><i class="far fa-edit"></i></a></td>
                             <td>
                                 <form action="{{url("municipios")."/".$municipio->id_municipio}}" method="post">
                                     @csrf
@@ -41,3 +41,4 @@
     </div>
 
 @endsection
+
