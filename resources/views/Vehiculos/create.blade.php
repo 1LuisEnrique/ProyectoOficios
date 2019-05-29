@@ -1,4 +1,4 @@
-@extends('layout.layout')
+@extends('layout.layout_admin')
 @section('title','Añadir vehiculo')
 @section('content')
     <h1 class=" text-white text-center">Registrar Nuevo vehículo</h1>
@@ -60,5 +60,4 @@
             </form>
         </div>
     </div>
-
 @endsection

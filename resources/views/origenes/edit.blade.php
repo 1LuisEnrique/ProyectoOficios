@@ -1,22 +1,37 @@
-@extends('layout.layout')
-@section('title','Modificar Origen')
+@extends('layout.layout_admin')
+@section('title','Actualizar Origenes')
 @section('content')
-    <h1 class="bg-primary text-white text-center">Modificar Origen</h1>
+    <h1 class="btn-group-justified text-white text-center">Actualizar Origen</h1>
     <div class="row">
-        <div class="col"><a class="btn-primary" href="{{url("origenes")}}">Regresar</a></div>
+        <div>
+            <button type="submit" class="btn-primary"><a class="btn-primary" href="{{url("origenes")}}">Regresar</a></button>
+        </div>
     </div>
-    <div class="row">
+    <div class="row col-lg-12">
         <div class="col-4 offset-4">
-            <form method="post" action="{{route("origenes.update",$origen->id_origen)}}">
+            <form method="post" action="{{route("origenes.update",$origene->id_origen)}}">
                 @csrf
                 @method("PUT")
-                <div class="form-group">
-                    <label for="descripcion">Reemplazar por:</label>
-                    <input type="text"  value="{{$origen->descripcion}}" id="descripcion" class="form-control" name="descripcion" placeholder="origen">
+                <div class="form-group center-block ">
+                    <div class="col-lg-4"></div>
+                    <div class="col-lg-2">
+                        <label class="col-lg-1" for="exampleInputPassword1">Reemplazar por:</label>
+                    </div>
+                    <div class="col-lg-2"></div>
+                    <div class="col-lg-6">
+                        <center><input class="col-lg-8" type="text" value="{{$origene->descripcion}}" id="descripcion" class="form-control" name="descripcion" placeholder="Origen"></center>
+                    </div>
+                    <div class="col-lg-12">
+                        <br>
+                        <center>
+                            <button type="submit" class="btn btn-primary">Actualizar</button>
+                        </center>
+                        <br>
+                    </div>
                 </div>
-
-                <button type="submit" class="btn-primary">Modificar</button>
             </form>
         </div>
+    </div>
+    <div>
     </div>
 @endsection

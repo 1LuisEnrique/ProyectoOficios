@@ -1,7 +1,7 @@
-@extends('layout.layout')
+@extends('layout.layout_admin')
 @section('title','Añadir Personal')
 @section('content')
-    <h1 class=" text-white text-center">Agregar Personal</h1>
+    <h1 class=" text-white text-center">Registrar Personal</h1>
     <div class="row">
         <div>
             <button type="submit" class="btn-primary"><a class="btn-primary" href="{{url("personales")}}">Regresar</a></button>
@@ -54,21 +54,24 @@
                         <div class="col-lg-4">
                             <label class="col-lg-4" for="exampleInputPassword1">Cargo</label>
                             <select class="col-lg-7" name="id_profesion" id="">
+                                <br>
                                 @foreach($profesiones as $profesion)
 
                                     <option value="{{$profesion->id_profesion}}">{{$profesion->descripcion}}</option>
                                 @endforeach
+                                    <br>
+                                <br>
                             </select>
+                            <br>
+                            <br>
                         </div>
+                        <br>
                     </div>
-
-
-
-
-                    <!--<input type="checkbox" value="hola" name="check">activame-->
-
+                    <br>
                 </div>
+                <br>
                 <center><button type="submit" class="btn btn-primary">Agregar</button></center>
+                <br>
             </form>
         </div>
     </div>

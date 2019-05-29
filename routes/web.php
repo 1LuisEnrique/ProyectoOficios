@@ -1,32 +1,72 @@
 <?php
 
 Route::get("/",function(){
-   return view("layout.layout");
+   return view("layout.layout_admin");
 });
 
-Route::resource('destinos','DestinosController');
+Route::group(['middleware'=>['auth']],function() {
+    Route::group(['middleware' => ['userverify']], function () {
+        Route::resources([
+            'destinos'=>'DestinosController',
 
-Route::resource('estados','EstadosController');
+            'estados'=>'EstadosController',
 
-Route::resource('marcas','MarcasController');
+            'marcas'=>'MarcasController',
 
-Route::resource('municipios','MunicipiosController');
+            'municipios'=>'MunicipiosController',
 
-Route::resource('origenes','OrigenesController');
+            'origenes'=>'OrigenesController',
 
-Route::resource('profesiones','ProfesionesController');
+            'profesiones'=>'ProfesionesController',
 
-Route::resource('vehiculos','VehiculosController');
+            'vehiculos'=>'VehiculosController',
 
-Route::resource('personales','PersonalesController');
+            'personales'=>'PersonalesController',
 
-Route::resource('plantillas','PlantillasController');
+            'plantillas'=>'PlantillasController',
+        ]);
+    });
+});
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
 
 
+Route::get('destinos/{iddestino}/destroy', [
+    'uses' => 'DestinosController@destroy',
+    'as' => 'destinos.destroy'
+]);
 
+Route::get('estados/{idestado}/destroy', [
+    'uses' => 'EstadosController@destroy',
+    'as' => 'estados.destroy'
+]);
 
+Route::get('marcas/{idmarca}/destroy', [
+    'uses' => 'MarcasController@destroy',
+    'as' => 'marcas.destroy'
+]);
 
+Route::get('municipios/{idmunicipio}/destroy', [
+    'uses' => 'MunicipiosController@destroy',
+    'as' => 'municipios.destroy'
+]);
 
+Route::get('origenes/{idorigen}/destroy', [
+    'uses' => 'OrigenesController@destroy',
+    'as' => 'origenes.destroy'
+]);
 
+Route::get('profesiones/{idprofesion}/destroy', [
+    'uses' => 'ProfesionesController@destroy',
+    'as' => 'profesiones.destroy'
+]);
 
+Route::get('vehiculos/{idvehiculo}/destroy', [
+    'uses' => 'VehiculosController@destroy',
+    'as' => 'vehiculos3.destroy'
+]);
 
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

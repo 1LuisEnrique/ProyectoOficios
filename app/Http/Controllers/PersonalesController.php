@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Ciudad;
 use App\Personales;
 use App\Profesiones;
 use Illuminate\Http\Request;
@@ -62,11 +63,11 @@ class PersonalesController extends Controller
      * @param  \App\Personales  $personales
      * @return \Illuminate\Http\Response
      */
-    public function edit(Personales $personales)
+    public function edit(Personales $personale)
     {
         //
         $profesiones = Profesiones::all();
-        return view("Personales.edit",compact('personal','profesiones'));
+        return view("Personales.edit",compact('personale','profesiones'));
     }
 
     /**
@@ -76,10 +77,10 @@ class PersonalesController extends Controller
      * @param  \App\Personales  $personales
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Personales $personal)
+    public function update(Request $request, Personales $personale)
     {
         //
-        $personal->update($request->all());
+        $personale->update($request->all());
         return redirect("personales");
     }
 
@@ -89,14 +90,10 @@ class PersonalesController extends Controller
      * @param  \App\Personales  $personales
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Personales $personal)
+    public function destroy(Personales $idpersonal)
     {
         //
-        $personal->delete();
-
-        //return redirect("profesiones");
-        //Vehiculos::destroy($id);
-        //return redirect("origenes");
+        $idpersonal->delete();
         return redirect("personales");
     }
 }

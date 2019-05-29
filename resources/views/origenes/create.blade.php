@@ -1,8 +1,6 @@
-@extends('layout.layout')
+@extends('layout.layout_admin')
 @section('title','Agregar Origenes')
 @section('content')
-
-
     <h1 class="btn-group-justified text-white text-center">Agregar Origen</h1>
     <div class="row">
         <div>
@@ -25,7 +23,7 @@
                     <div class="col-lg-12">
                         <br>
                         <center>
-                            <button type="submit" class="btn btn-primary">Agregar</button>
+                            <button type="submit" class="btn btn-primary">Registrar</button>
                         </center>
                         <br>
                     </div>
@@ -34,8 +32,5 @@
         </div>
     </div>
     <div>
-
     </div>
-
-
 @endsection

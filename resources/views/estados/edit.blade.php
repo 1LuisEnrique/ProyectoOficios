@@ -1,4 +1,4 @@
-@extends('layout.layout')
+@extends('layout.layout_admin')
 @section('title','Modificar Estado')
 @section('content')
 
@@ -24,7 +24,7 @@
                     <div class="col-lg-12">
                         <br>
                         <center>
-                            <button type="submit" class="btn btn-primary">Modificar</button>
+                            <button type="submit" class="btn btn-primary">Actualizar</button>
                         </center>
                         <br>
                     </div>

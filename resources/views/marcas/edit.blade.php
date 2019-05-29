@@ -1,12 +1,10 @@
-@extends('layout.layout')
-@section('title','Agregar marcas')
+@extends('layout.layout_admin')
+@section('title','Actualizar Marcas')
 @section('content')
-
-    <h1 class=" text-white text-center">Modificar Marca</h1>
+    <h1 class=" text-white text-center">Actualizar Marca</h1>
     <div class="row">
         <button type="submit" class="btn-primary"><a class="btn-primary" href="{{url("marcas")}}">Regresar</a></button>
     </div>
-
     <div class="row">
         <div class="col-4 offset-4">
             <form method="post" action="{{route("marcas.update",$marca->id_marca)}}">
@@ -24,15 +22,12 @@
                     <div class="col-lg-12">
                         <br>
                         <center>
-                            <button type="submit" class="btn btn-primary">Modificar</button>
+                            <button type="submit" class="btn btn-primary">Actualizar</button>
                         </center>
                         <br>
                     </div>
-
-
                 </div>
             </form>
         </div>
     </div>
-
 @endsection

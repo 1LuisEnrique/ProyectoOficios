@@ -1,4 +1,4 @@
-@extends('layout.layout')
+@extends('layout.layout_admin')
 @section('title','Marcas')
 
 @section('content')
@@ -14,23 +14,17 @@
         <div class="col">
             <table class="table">
                 <thead>
-                <th>No.</th>
                 <th>Descripción</th>
-                <th>Editar</th>
+                <th>Actualizar</th>
                 <th>Eliminar</th>
                 </thead>
                 <tbdoy>
                     @foreach($marcas as $marca)
                         <tr>
-                            <td>{{$marca->id_marca}}</td>
                             <td>{{$marca->descripcion}}</td>
                             <td><a href="{{route("marcas.edit",$marca->id_marca)}}" class="btn btn-outline-primary"><i class="far fa-edit"></i></a></td>
-                            <td>
-                                <form action="{{url("marcas")."/".$marca->id_marca}}" method="post">
-                                    @csrf
-                                    @method("DELETE")
-                                    <button href="" class="btn btn-outline-danger"><i class="far fa-trash-alt"></i></button>
-                                </form>
+                            <td class="table-success">
+                                <a href="{{route('marcas.destroy',$marca->id_marca)}}" onclick="return confirm('¿Seguro que desea eliminar la Marca?')" class="btn btn-outline-danger" name="Eliminar"><i class="fas fa-trash"></i></a>
                             </td>
                         </tr>
                     @endforeach

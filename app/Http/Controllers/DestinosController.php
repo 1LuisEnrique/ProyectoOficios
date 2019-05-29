@@ -90,10 +90,10 @@ class DestinosController extends Controller
      * @param  \App\Destinos  $destinos
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Destinos $destino)
+    public function destroy(Destinos $iddestino)
     {
         //
-        $destino->delete();
+        $iddestino->delete();
         return redirect("destinos");
     }
 }

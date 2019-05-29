@@ -65,7 +65,7 @@ class VehiculosController extends Controller
      * @param  \App\Vehiculos  $vehiculos
      * @return \Illuminate\Http\Response
      */
-    public function edit(Vehiculos $vehiculos)
+    public function edit(Vehiculos $vehiculo)
     {
         //
         $marcas = Marcas::all();
@@ -92,15 +92,10 @@ class VehiculosController extends Controller
      * @param  \App\Vehiculos  $vehiculos
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Vehiculos $vehiculo)
+    public function destroy(Vehiculos $idvehiculo)
     {
         //
-
-        $vehiculo->delete();
-
-        //return redirect("profesiones");
-        //Vehiculos::destroy($id);
-        //return redirect("origenes");
+        $idvehiculo->delete();
         return redirect("vehiculos");
     }
 }

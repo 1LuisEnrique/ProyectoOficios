@@ -100,10 +100,10 @@ class MunicipiosController extends Controller
      * @param  \App\Municipios  $municipios
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Municipios $municipio)
+    public function destroy(Municipios $idmunicipio)
     {
         //
-        $municipio->delete();
+        $idmunicipio->delete();
         return redirect("municipios");
     }
 }

@@ -87,10 +87,10 @@ class EstadosController extends Controller
      * @param  \App\Estados  $estados
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Estados $estado)
+    public function destroy(Estados $idestado)
     {
         //
-        $estado->delete();
+        $idestado->delete();
         return redirect("estados");
     }
 }

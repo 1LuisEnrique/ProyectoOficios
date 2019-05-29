@@ -1,4 +1,4 @@
-@extends('layout.layout')
+@extends('layout.layout_admin')
 @section('title','Vehiculos')
 @section('content')
     <h1 class=" text-white text-center">Vehículos</h1>
@@ -14,7 +14,7 @@
                 <th>Modelo</th>
                 <th>Marca</th>
                 <th>Placas</th>
-                <th>Modificar</th>
+                <th>Actualizar</th>
                 <th>Eliminar</th>
 
                 </thead>
@@ -23,18 +23,12 @@
                 @foreach($vehiculos as $vehiculo)
                     <tr>
                         <td>{{$vehiculo->modelo}}</td>
-                        <td>{{$vehiculo->placas}}</td>
                         <td>{{isset($vehiculo->getMarca[0])?$vehiculo->getMarca[0]->descripcion:""}}</td>
-                        <td><a href="{{route("vehiculos.edit",$vehiculo->id_vehiculo)}}">Modificar</a></td>
-                        <td>
-                            <form action="{{url("vehiculos")."/".$vehiculo->id_vehiculo}}" method="post">
-                                @csrf
-                                @method("DELETE")
-                                <button href="" class="btn btn-outline-danger"><i class="far fa-trash-alt"></i></button>
-
-                            </form>
+                        <td>{{$vehiculo->placas}}</td>
+                        <td><a href="{{route("vehiculos.edit",$vehiculo->id_vehiculo)}}" class="btn/outline/primary"><i class="far fa-edit"></i></a></td>
+                        <td class="table-success">
+                            <a href="{{route('vehiculos.destroy',$vehiculo->id_vehiculo)}}" onclick="return confirm('¿Seguro que desea eliminar el vehiculo?')" class="btn btn-outline-danger" name="Eliminar"><i class="fas fa-trash"></i></a>
                         </td>
-
                     </tr>
                 @endforeach
                 </tbody>

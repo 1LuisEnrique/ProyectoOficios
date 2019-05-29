@@ -1,4 +1,4 @@
-@extends('layout.layout')
+@extends('layout.layout_admin')
 @section('title','Personal')
 @section('content')
     <h1 class=" text-white text-center">Personal</h1>
@@ -15,12 +15,12 @@
                 <th>Nombre</th>
                 <th>Apellido Paterno</th>
                 <th>Apellido Materno</th>
-                <th> Clave Personal</th>
-                <th> Profesion</th>
-
+                <th> Clave</th>
+                <th>Profesion</th>
+                <th> Actualizar</th>
+                <th> Eliminar</th>
                 </thead>
                 <tbody>
-
                 @foreach($personales as $personal)
                     <tr>
                         <td>{{$personal->nombre}}</td>
@@ -28,18 +28,10 @@
                         <td>{{$personal->am}}</td>
                         <td>{{$personal->clave_personal}}</td>
                         <td>{{isset($personal->getProfesion[0])?$personal->getProfesion[0]->descripcion:""}}</td>
-
-
-                        <td><a href="{{route("personales.edit",$personal->id_personal)}}">Modificar</a></td>
-                        <td>
-                            <form action="{{url("personales")."/".$personal->id_personal}}" method="post">
-                                @csrf
-                                @method("DELETE")
-                                <button href="" class="btn btn-outline-danger"><i class="far fa-trash-alt"></i></button>
-
-                            </form>
+                        <td><a href="{{route("personales.edit",$personal->id_personal)}}" class="btn btn-outline-primary"><i class="far fa-edit"></i></a></td>
+                        <td class="table-success">
+                            <a href="{{route('personales.destroy',$personal->id_personal)}}" onclick="return confirm('¿Seguro que desea eliminar el Personal?')" class="btn btn-outline-danger" name="Eliminar"><i class="fas fa-trash"></i></a>
                         </td>
-
                     </tr>
                 @endforeach
                 </tbody>

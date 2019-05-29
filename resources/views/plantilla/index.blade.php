@@ -1,4 +1,4 @@
-@extends('layout.layout')
+@extends('layout.layout_admin')
 @section('title','Personal')
 @section('content')
     <h1 class=" text-white text-center">Plantilla</h1>

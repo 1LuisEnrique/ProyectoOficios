@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Personas;
 use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
@@ -63,10 +64,21 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+
+        $datos_personal=array(['nombre' => $data['nombre'],
+            'ap' => $data['ap'],
+            'am' => $data['am'],
+            'clave_personal'=>$data['clave_personal'],
+            'id_profesion'=>1]);
+
+        $personal=Personales::create($datos_personal);
+        //dd($persona);
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'id_personal'=>$personal->id_personal,
+            'tipo_usuario'=>0
         ]);
     }
 }

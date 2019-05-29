@@ -1,21 +1,34 @@
-@extends('layout.layout')
-@section('title','Agregar Profesion')
+@extends('layout.layout_admin')
+@section('title','Actualizar Profesion')
 @section('content')
-    <h1 class="bg-primary text-white text-center">Modificar profesion</h1>
+
+    <h1 class=" text-white text-center">Actualizar Profesion</h1>
     <div class="row">
-        <div class="col"><a class="btn-primary" href="{{url("profesiones")}}">Regresar</a></div>
+        <button type="submit" class="btn-primary"><a class="btn-primary" href="{{url("profesiones")}}">Regresar</a></button>
     </div>
+
     <div class="row">
         <div class="col-4 offset-4">
-            <form method="post" action="{{route("profesiones.update",$profesion->id_profesion)}}">
+            <form method="post" action="{{route("profesiones.update",$profesione->id_profesion)}}">
                 @csrf
                 @method("PUT")
                 <div class="form-group">
-                    <label for="descripcion">Nombre profesion</label>
-                    <input type="text"  value="{{$profesion->descripcion}}" id="descripcion" class="form-control" name="descripcion" placeholder="Profesion">
+                    <div class="col-lg-4"></div>
+                    <div class="col-lg-2">
+                        <label class="col-lg-1" for="exampleInputPassword1">Reemplazar por:</label>
+                    </div>
+                    <div class="col-lg-2"></div>
+                    <div class="col-lg-6">
+                        <center><input class="col-lg-8" type="text"  value="{{$profesione->descripcion}}" id="descripcion" class="form-control" name="descripcion" placeholder="profesion"></center>
+                    </div>
+                    <div class="col-lg-12">
+                        <br>
+                        <center>
+                            <button type="submit" class="btn btn-primary">Actualizar</button>
+                        </center>
+                        <br>
+                    </div>
                 </div>
-
-                <button type="submit" class="btn-primary">Aceptar</button>
             </form>
         </div>
     </div>

@@ -87,10 +87,11 @@ class MarcasController extends Controller
      * @param  \App\Marcas  $marcas
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Marcas $marca)
+    public function destroy(Marcas $idmarca)
     {
         //
-        $marca->delete();
+        $idmarca->delete();
         return redirect("marcas");
+
     }
 }

@@ -77,6 +77,26 @@ h1 {
   margin: 0.67em 0;
 }
 
+body {
+    display:flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+#wrap_content{
+    flex: 1 0 auto;
+}
+footer{
+    bottom: -100%;
+    width: 100%;
+}
+#letrainicio
+[
+
+]
+
+
+
+
 mark {
   background: #ff0;
   color: #000;

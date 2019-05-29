@@ -62,10 +62,10 @@ class ProfesionesController extends Controller
      * @param  \App\Profesiones  $profesiones
      * @return \Illuminate\Http\Response
      */
-    public function edit(Profesiones $profesion)
+    public function edit(Profesiones $profesione)
     {
         //
-        return view("profesiones.edit",compact('profesion'));
+        return view("profesiones.edit",compact('profesione'));
     }
 
     /**
@@ -75,11 +75,11 @@ class ProfesionesController extends Controller
      * @param  \App\Profesiones  $profesiones
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Profesiones $profesion)
+    public function update(Request $request, Profesiones $profesione)
     {
         //
-        $profesion->update($request->all());
-        return redirect("profesion");
+        $profesione->update($request->all());
+        return redirect("profesiones");
 
     }
 
@@ -89,10 +89,10 @@ class ProfesionesController extends Controller
      * @param  \App\Profesiones  $profesiones
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Profesiones $profesione)
+    public function destroy(Profesiones $idprofesion)
     {
         //
-        $profesione->delete();
+        $idprofesion->delete();
         return redirect("profesiones");
     }
 }
