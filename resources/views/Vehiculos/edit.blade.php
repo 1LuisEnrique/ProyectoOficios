@@ -1,4 +1,4 @@
-@extends('layout.layout_admin')
+@extends('layouts.app')
 @section('title','Actualizar vehiculo')
 @section('content')
     <h1 class=" text-white text-center">Actualizar vehículo</h1>

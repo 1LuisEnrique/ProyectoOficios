@@ -4,8 +4,6 @@ Route::get("/",function(){
    return view("layout.layout_admin");
 });
 
-Route::group(['middleware'=>['auth']],function() {
-    Route::group(['middleware' => ['userverify']], function () {
         Route::resources([
             'destinos'=>'DestinosController',
 
@@ -24,12 +22,9 @@ Route::group(['middleware'=>['auth']],function() {
             'personales'=>'PersonalesController',
 
             'plantillas'=>'PlantillasController',
-        ]);
-    });
-});
-Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+            'unidades_admin'=>'UnidadesAdminController',
+        ]);
 
 
 Route::get('destinos/{iddestino}/destroy', [

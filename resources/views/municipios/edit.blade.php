@@ -1,4 +1,4 @@
-@extends('layout.layout_admin')
+@extends('layouts.app')
 @section('title','Modificar Municipios')
 @section('content')
 

@@ -1,4 +1,4 @@
-@extends('layout.layout_admin')
+@extends('layouts.app')
 @section('title','Actualizar Origenes')
 @section('content')
     <h1 class="btn-group-justified text-white text-center">Actualizar Origen</h1>

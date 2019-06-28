@@ -1,5 +1,5 @@
 
-@extends('layout.layout_admin')
+@extends('layouts.app')
 @section('title','Agregar Profesiones')
 @section('content')
     <h1 class="btn-group-justified text-white text-center">Agregar Nueva Profesion</h1>

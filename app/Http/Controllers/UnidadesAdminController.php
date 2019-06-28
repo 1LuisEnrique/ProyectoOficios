@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Ciudad;
 use App\Personales;
-use App\Profesiones;
+use App\UnidadesAdmin;
 use Illuminate\Http\Request;
 
-class PersonalesController extends Controller
+class UnidadesAdminController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,8 +16,8 @@ class PersonalesController extends Controller
     public function index()
     {
         //
-        $personales=Personales::all();
-        return view("Personales.index",compact("personales"));
+        $unidades_admin=UnidadesAdmin::all();
+        return view("unidades_admin.index",compact("unidades_admin"));
     }
 
     /**
@@ -29,8 +28,9 @@ class PersonalesController extends Controller
     public function create()
     {
         //
-        $personales= Personales::all();
-        return view("Personales.create",compact("personales"));
+        $personales = Personales::all();
+        return view("unidades_admin.create",compact("personales"));
+
     }
 
     /**
@@ -42,17 +42,15 @@ class PersonalesController extends Controller
     public function store(Request $request)
     {
         //
-        Personales::create($request->all());
-        return redirect("personales");
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Personales  $personales
+     * @param  \App\UnidadesAdmin  $unidadesAdmin
      * @return \Illuminate\Http\Response
      */
-    public function show(Personales $personales)
+    public function show(UnidadesAdmin $unidadesAdmin)
     {
         //
     }
@@ -60,40 +58,34 @@ class PersonalesController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Personales  $personales
+     * @param  \App\UnidadesAdmin  $unidadesAdmin
      * @return \Illuminate\Http\Response
      */
-    public function edit(Personales $personale)
+    public function edit(UnidadesAdmin $unidadesAdmin)
     {
         //
-        $profesiones = Profesiones::all();
-        return view("Personales.edit",compact('personale','profesiones'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Personales  $personales
+     * @param  \App\UnidadesAdmin  $unidadesAdmin
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Personales $personale)
+    public function update(Request $request, UnidadesAdmin $unidadesAdmin)
     {
         //
-        $personale->update($request->all());
-        return redirect("personales");
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Personales  $personales
+     * @param  \App\UnidadesAdmin  $unidadesAdmin
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Personales $idpersonal)
+    public function destroy(UnidadesAdmin $unidadesAdmin)
     {
         //
-        $idpersonal->delete();
-        return redirect("personales");
     }
 }

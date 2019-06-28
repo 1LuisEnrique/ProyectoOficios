@@ -1,4 +1,4 @@
-@extends('layout.layout_admin')
+@extends('layouts.app')
 @section('title','Personal')
 @section('content')
     <h1 class=" text-white text-center">Personal</h1>
@@ -27,7 +27,7 @@
                         <td>{{$personal->ap}}</td>
                         <td>{{$personal->am}}</td>
                         <td>{{$personal->clave_personal}}</td>
-                        <td>{{isset($personal->getProfesion[0])?$personal->getProfesion[0]->descripcion:""}}</td>
+                        <td>{{$personal->profesion}}</td>
                         <td><a href="{{route("personales.edit",$personal->id_personal)}}" class="btn btn-outline-primary"><i class="far fa-edit"></i></a></td>
                         <td class="table-success">
                             <a href="{{route('personales.destroy',$personal->id_personal)}}" onclick="return confirm('¿Seguro que desea eliminar el Personal?')" class="btn btn-outline-danger" name="Eliminar"><i class="fas fa-trash"></i></a>

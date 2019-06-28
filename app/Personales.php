@@ -7,12 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Personales extends Model
 {
     //
-    protected $table='Personales';
+    protected $table='Personal';
     protected $primaryKey='id_personal';
-    protected $fillable=['nombre','ap','am','clave_personal','id_profesion'];
+    protected $fillable=['nombre','ap','am','clave_personal','profesion'];
 
-    function getProfesion()
-    {
-        return $this->hasMany("App\Profesiones", 'id_profesion', 'id_profesion');
-    }
 }

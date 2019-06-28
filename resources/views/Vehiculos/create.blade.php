@@ -1,4 +1,4 @@
-@extends('layout.layout_admin')
+@extends('layouts.app')
 @section('title','Añadir vehiculo')
 @section('content')
     <h1 class=" text-white text-center">Registrar Nuevo vehículo</h1>

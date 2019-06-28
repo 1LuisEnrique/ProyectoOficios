@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -38,25 +39,29 @@
         <div class="col-xs-3 col-sm-3 col-md-2">
             <label  href="{{ URL::asset ('assets/img/tes.png') }}" target="_blank"><img id="logo3" src="{{ URL::asset ('assets/img/tes.png') }}" /></label>
         </div>
-        <nav>
-            <ul class="nav navbar-nav">
-                <li><a href="{{url("origenes")}}">Origenes</a></li>
-                <li><a href="{{url("destinos")}}">Destinos</a></li>
-                <li><a href="{{url("estados")}}">Estados</a></li>
-                <li><a href="{{url("municipios")}}">Municipios</a></li>
-                <li><a href="{{url("marcas")}}">Marcas</a></li>
-                <li><a href="{{url("vehiculos")}}">Vehiculos</a></li>
-                <li><a href="{{url("profesiones")}}">Profesiones</a></li>
-                <li><a href="{{url("personales")}}">Personal</a></li>
-                <li class="nav-item"><a href="{{url("plantillas")}}" class="nav-link text-white">Plantilla</a></li>
-                <li class="nav-item"><a href="{{url("oficios")}}" class="nav-link text-white">Generar Oficios</a></li>
-            </ul>
-        </nav>
+
+
+        @component('partials.menu')
+        @endcomponent
     </div>
 </header>
 <br>
+
 <section class="container" id="wrap_content">
     @yield("content")
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    @guest
+        @guest
+            <h3 class="bg-success text-center">No has iniciado sesión</h3>
+        @endguest
+    @endguest
 </section>
 <footer class="colorfooter col-xs-10 col-sm-10 col-md-10 offset-sm-1 footer-responsive">
     <div class="col-xs-6 col-sm-6 col-md-6">

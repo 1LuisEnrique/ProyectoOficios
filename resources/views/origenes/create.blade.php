@@ -1,4 +1,4 @@
-@extends('layout.layout_admin')
+@extends('layouts.app')
 @section('title','Agregar Origenes')
 @section('content')
     <h1 class="btn-group-justified text-white text-center">Agregar Origen</h1>
